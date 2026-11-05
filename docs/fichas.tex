@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage[backend=biber,style=ieee,sorting=none,maxbibnames=99,maxcitenames=99,url=false]{biblatex}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,citecolor=blue!45!black]{hyperref}
+\addbibresource{referencias.bib}
+\DefineBibliographyStrings{spanish}{artno = {art\adddot}}
+
+\definecolor{tinta}{HTML}{153854}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\newcommand{\pendiente}{\textit{Pendiente de redacción personal.}}
+
+% Sustituye cada \pendiente por tu texto en el argumento correspondiente.
+\newcommand{\ficha}[7]{%
+  {\small\color{tinta}\textbf{UTEQ \enspace / \enspace ISR-701 \enspace / \enspace FORM-FB-01}\par}
+  {\small Melanie Michelle Muñoz Vera \enspace | \enspace Semana 2, 2026\par}
+  \section*{\color{tinta}#1}
+  \textbf{Referencia IEEE}\par
+  \cite{#2}\ \fullcite{#2}\par
+  \textbf{Identificador verificado}\par
+  #3\par
+  \textbf{Dato concreto y ubicación}\par
+  #4\par
+  \textbf{Pista para la lectura}\par
+  #5\par
+  \textbf{Resumen personal de 100 palabras}\par
+  #6\par\vspace{0.8em}
+  \textbf{Nota personal y uso en TA-IND-01}\par
+  #7\par
+}
+
+\begin{document}
+\ficha{Ficha 1. Heterogeneidad tecnológica}{schwarz2025}
+  {DOI \href{https://doi.org/10.1007/s10664-025-10684-4}{10.1007/s10664-025-10684-4}}
+  {El análisis temático se basó en 15 transcripciones de entrevistas a profesionales. Véase la sección 3.2, «Thematic Analysis».}
+  {Revisa cómo los autores identifican beneficios y costes de usar tecnologías distintas y qué prácticas proponen para gestionarlos.}
+  {\pendiente}{\pendiente}
+\newpage
+
+\ficha{Ficha 2. Seguridad de las API}{genfer2025}
+  {DOI \href{https://doi.org/10.1007/s10664-024-10601-1}{10.1007/s10664-024-10601-1}}
+  {El experimento se ejecutó en cuatro rondas con 70 participantes. Véase la sección 4.2.3, «Participants».}
+  {Compara qué midieron con diagramas anotados y qué límites tiene generalizar desde una muestra de estudiantes y profesionales.}
+  {\pendiente}{\pendiente}
+\newpage
+
+\ficha{Ficha 3. Rendimiento y escalabilidad}{blinowski2022}
+  {DOI \href{https://doi.org/10.1109/ACCESS.2022.3152803}{10.1109/ACCESS.2022.3152803}. \href{https://mostwiedzy.pl/pl/publication/download/1/monolithic-vs-microservice-architecture-a-performance-and-scalability-evaluation_70008.pdf}{Versión publicada en el repositorio institucional}.}
+  {En los experimentos sobre una sola máquina, la versión monolítica obtuvo mayor rendimiento que la versión de microservicios. Véase la sección VIII, p.~20372.}
+  {Distingue las condiciones del ensayo, la métrica de rendimiento y las conclusiones que sí se pueden aplicar a otro sistema.}
+  {\pendiente}{\pendiente}
+\newpage
+
+\ficha{Ficha 4. Patrones de diseño}{burns2024}
+  {ISBN \href{https://www.oreilly.com/library/view/designing-distributed-systems/9781098156343/}{9781098156343} (edición digital).}
+  {El capítulo 3, «The Sidecar Pattern», presenta un ejemplo que añade HTTPS a un servicio heredado mediante un sidecar.}
+  {Identifica qué responsabilidad se traslada al componente auxiliar y cómo ese patrón podría aparecer en tu sistema real.}
+  {\pendiente}{\pendiente}
+\newpage
+
+\ficha{Ficha 5. Replicación de datos}{kleppmann2026}
+  {ISBN \href{https://www.oreilly.com/library/view/designing-data-intensive/9781098119058/}{9781098119058} (edición digital).}
+  {El \href{https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ch06.html}{capítulo 6, «Replication»}, distingue tres enfoques: líder único, múltiples líderes y replicación sin líder.}
+  {Elige un enfoque y explica qué decisiones exige ante fallos, retrasos o conflictos entre réplicas.}
+  {\pendiente}{\pendiente}
+
+\subsection*{Declaración de uso de inteligencia artificial}
+Se utilizó Codex de OpenAI como apoyo para localizar fuentes, contrastar sus metadatos, registrar datos con sus localizadores y preparar el documento LaTeX. Los DOI se contrastaron con los registros editoriales y Crossref, y los ISBN con el catálogo de O'Reilly. La comprobación personal de las fuentes y la redacción de los resúmenes y notas quedan pendientes en esta versión.
+\end{document}
