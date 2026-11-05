@@ -10,13 +10,13 @@ Actividad formativa individual de Aplicaciones Distribuidas (ISR-701), UTEQ. Sem
 - [Fuente LaTeX](docs/fichas.tex)
 - [Bibliografía BibLaTeX](docs/referencias.bib)
 
-Esta versión contiene cinco fuentes verificadas y un dato localizado por fuente. Quedan pendientes los resúmenes de 100 palabras y las notas personales de la estudiante.
+Esta versión contiene cinco fuentes verificadas y un dato localizado por fuente. Incluye los resúmenes y las notas personales aportados por la estudiante.
 
 ## Compilación
 
 Archivo principal: `docs/fichas.tex`. Compilador: `pdfLaTeX`. Motor bibliográfico: `Biber`.
 
-Instala TeX Live o MiKTeX con `biber`, `biblatex`, `biblatex-ieee`, `babel` para español, `lmodern`, `geometry`, `microtype`, `csquotes`, `xcolor` y `hyperref`. Desde la raíz del repositorio, ejecuta:
+Instala TeX Live o MiKTeX con `biber`, `biblatex`, `biblatex-ieee`, `babel` para español, `geometry`, `microtype`, `csquotes`, `xcolor` y `hyperref`. Desde la raíz del repositorio, ejecuta:
 
 ```sh
 cd docs

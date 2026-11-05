@@ -1,7 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
-\usepackage{lmodern}
 \usepackage[margin=25mm]{geometry}
 \usepackage{microtype}
 \usepackage{csquotes}
@@ -13,13 +11,8 @@
 
 \definecolor{tinta}{HTML}{153854}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.55em}
-\newcommand{\pendiente}{\textit{Pendiente de redacción personal.}}
-
-% Sustituye cada \pendiente por tu texto en el argumento correspondiente.
-\newcommand{\ficha}[7]{%
-  {\small\color{tinta}\textbf{UTEQ \enspace / \enspace ISR-701 \enspace / \enspace FORM-FB-01}\par}
-  {\small Melanie Michelle Muñoz Vera \enspace | \enspace Semana 2, 2026\par}
+\setlength{\parskip}{0.4em}
+\newcommand{\ficha}[6]{%
   \section*{\color{tinta}#1}
   \textbf{Referencia IEEE}\par
   \cite{#2}\ \fullcite{#2}\par
@@ -27,49 +20,46 @@
   #3\par
   \textbf{Dato concreto y ubicación}\par
   #4\par
-  \textbf{Pista para la lectura}\par
+  \textbf{Resumen personal}\par
   #5\par
-  \textbf{Resumen personal de 100 palabras}\par
-  #6\par\vspace{0.8em}
   \textbf{Nota personal y uso en TA-IND-01}\par
-  #7\par
+  #6\par
 }
 
 \begin{document}
+{\color{tinta}\textbf{UTEQ / ISR-701 / FORM-FB-01}}\par
+Melanie Michelle Muñoz Vera · Semana 2, 2026\par
+
 \ficha{Ficha 1. Heterogeneidad tecnológica}{schwarz2025}
   {DOI \href{https://doi.org/10.1007/s10664-025-10684-4}{10.1007/s10664-025-10684-4}}
-  {El análisis temático se basó en 15 transcripciones de entrevistas a profesionales. Véase la sección 3.2, «Thematic Analysis».}
-  {Revisa cómo los autores identifican beneficios y costes de usar tecnologías distintas y qué prácticas proponen para gestionarlos.}
-  {\pendiente}{\pendiente}
-\newpage
+  {El análisis temático se basó en 15 transcripciones de entrevistas a profesionales. Véase la sección 3.2, ``Thematic Analysis''.}
+  {Básicamente Schwarz y sus coautores investigó qué pasa cuando cada equipo de trabajo usa las tecnologías que quiere en microservicios. Entrevistaron a profesionales para ver qué funciona y qué sale mal. Llegaron a la conclusión de que a veces cambiar de tecnología es por una buena razón del proyecto, pero otras veces no hay un motivo claro. Al final te sugieren 13 reglas para organizarse bien, como definir qué cosas sí o sí se deben estandarizar (ejemplo: los formatos para pasarse la información) y en qué cosas sí le dan libertad a cada equipo.}
+  {Lo que entendí aquí es que usar tecnologías distintas está bien si cada una resuelve un problema específico, pero al final del día te puede complicar la vida a la hora de juntar todo. Esta fuente me sirve para la parte de arquitectura, para explicar qué tecnologías comparten los servicios y cuáles decide usar cada equipo por su cuenta.}
 
 \ficha{Ficha 2. Seguridad de las API}{genfer2025}
   {DOI \href{https://doi.org/10.1007/s10664-024-10601-1}{10.1007/s10664-024-10601-1}}
-  {El experimento se ejecutó en cuatro rondas con 70 participantes. Véase la sección 4.2.3, «Participants».}
-  {Compara qué midieron con diagramas anotados y qué límites tiene generalizar desde una muestra de estudiantes y profesionales.}
-  {\pendiente}{\pendiente}
-\newpage
+  {El experimento se ejecutó en cuatro rondas con 70 participantes. Véase la sección 4.2.3, ``Participants''.}
+  {Genfer y sus coautores hicieron un experimento con personas para ver si poner notas de seguridad en los diagramas de componentes ayudaba a entender mejor las API. Pusieron a la gente a responder preguntas sobre dos sistemas (algunos tenían los diagramas completos y otros no) y midieron qué tan bien respondían y cuánto tardaban. Resulta que las notas ayudaron muchísimo a dar respuestas correctas, sobre todo a los que tenían menos experiencia, aunque en el tiempo que tardaron no cambió mucho la cosa. Con esto demuestran que documentar bien la arquitectura sirve para entender los controles de seguridad.}
+  {Me quedó claro que hacer un diagrama y ponerle notas de seguridad te ayuda para saber dónde están los controles. Pienso usar esto en la sección de seguridad para mostrar, por ejemplo, en qué parte exacta del sistema se valida quién es el que está mandando una solicitud.}
 
 \ficha{Ficha 3. Rendimiento y escalabilidad}{blinowski2022}
   {DOI \href{https://doi.org/10.1109/ACCESS.2022.3152803}{10.1109/ACCESS.2022.3152803}. \href{https://mostwiedzy.pl/pl/publication/download/1/monolithic-vs-microservice-architecture-a-performance-and-scalability-evaluation_70008.pdf}{Versión publicada en el repositorio institucional}.}
   {En los experimentos sobre una sola máquina, la versión monolítica obtuvo mayor rendimiento que la versión de microservicios. Véase la sección VIII, p.~20372.}
-  {Distingue las condiciones del ensayo, la métrica de rendimiento y las conclusiones que sí se pueden aplicar a otro sistema.}
-  {\pendiente}{\pendiente}
-\newpage
+  {Blinowski y sus coautores querían ver qué era más rápido y escalable: si una app tradicional (monolito) o una dividida en microservicios. Para probarlo, hicieron pruebas de estrés en Java y C\# tanto en una computadora local como en la nube (Azure). Lo curioso fue que, en una sola máquina, la app monolítica funcionó mejor que la de microservicios. También se dieron cuenta de que meterle más servidores a lo loco no siempre ayuda y a veces hasta frena el sistema. Todo depende de la carga real que reciba el proyecto.}
+  {Lo que aprendí aquí es que por más que dividas tu app en microservicios, no te asegura mágicamente que vaya a ser más rápida. En la parte de rendimiento usaría esta fuente para analizar si realmente vale la pena esa separación según la carga que reciba el sistema y cómo se despliegue.}
 
 \ficha{Ficha 4. Patrones de diseño}{burns2024}
   {ISBN \href{https://www.oreilly.com/library/view/designing-distributed-systems/9781098156343/}{9781098156343} (edición digital).}
-  {El capítulo 3, «The Sidecar Pattern», presenta un ejemplo que añade HTTPS a un servicio heredado mediante un sidecar.}
-  {Identifica qué responsabilidad se traslada al componente auxiliar y cómo ese patrón podría aparecer en tu sistema real.}
-  {\pendiente}{\pendiente}
-\newpage
+  {El capítulo 3, ``The Sidecar Pattern'', presenta un ejemplo que añade HTTPS a un servicio heredado mediante un sidecar.}
+  {Burns te enseña un truco para agregarle funciones a una aplicación sin tener que meterle mano al contenedor o código principal, usando algo llamado el patrón sidecar. La idea es poner un contenedor ``ayudante'' pegado al contenedor principal en la misma máquina para que compartan recursos (como la red). El ejemplo que da es un sistema viejo que solo acepta tráfico HTTP sin cifrar, al que le pegas este ayudante al lado para que él se encargue de gestionar la seguridad con HTTPS. Así te queda claro qué hace el servicio principal y de qué se encarga el auxiliar.}
+  {Entendí que puedes meter un contenedor auxiliar que le haga el favor al servicio principal de encargarse de cosas como el HTTPS sin tocar el código original. Esto lo pondría en la sección de despliegue para explicar cómo se dividen el trabajo el servicio principal y sus ayudantes, si es que llego a usar este patrón en mi proyecto.}
 
 \ficha{Ficha 5. Replicación de datos}{kleppmann2026}
   {ISBN \href{https://www.oreilly.com/library/view/designing-data-intensive/9781098119058/}{9781098119058} (edición digital).}
-  {El \href{https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ch06.html}{capítulo 6, «Replication»}, distingue tres enfoques: líder único, múltiples líderes y replicación sin líder.}
-  {Elige un enfoque y explica qué decisiones exige ante fallos, retrasos o conflictos entre réplicas.}
-  {\pendiente}{\pendiente}
+  {El \href{https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ch06.html}{capítulo 6, ``Replication''}, distingue tres enfoques: líder único, múltiples líderes y replicación sin líder.}
+  {Kleppmann y Riccomini explican el dolor de cabeza que es mantener los mismos datos copiados en varias computadoras mientras la gente los va cambiando. Comparan tres formas de hacerlo: cuando hay una sola máquina líder, cuando hay varias líderes o cuando no hay ninguna. Dan tres razones clave de por qué vale la pena complicarse con esto: para que la app responda más rápido si el usuario está cerca del servidor, para que todo siga funcionando si se cae una máquina, y para repartir la carga de trabajo entre varias compus. Eso sí, asumen que cada máquina guardará una copia completa de toda la base de datos.}
+  {Aquí entendí que tener varias copias de los datos te salvan si algo falla, pero algo a tener en cuenta, esas copias a veces se demoran un poco en actualizarse. Usaría esta fuente en la sección de manejo de datos para explicar cómo viajan las escrituras y qué pasa si una réplica se queda atascada.}
 
 \subsection*{Declaración de uso de inteligencia artificial}
-Se utilizó Codex de OpenAI como apoyo para localizar fuentes, contrastar sus metadatos, registrar datos con sus localizadores y preparar el documento LaTeX. Los DOI se contrastaron con los registros editoriales y Crossref, y los ISBN con el catálogo de O'Reilly. La comprobación personal de las fuentes y la redacción de los resúmenes y notas quedan pendientes en esta versión.
+Se utilizó Codex de OpenAI para localizar fuentes, preparar ejemplos de apoyo, revisar la extensión y la tipografía, y maquetar las fichas. Los DOI se cotejaron con las publicaciones y Crossref, y los ISBN con O'Reilly. La estudiante aportó los resúmenes y las notas personales.
 \end{document}
