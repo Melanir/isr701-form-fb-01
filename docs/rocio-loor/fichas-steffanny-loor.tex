@@ -1,0 +1,48 @@
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage[
+  backend=biber,
+  style=ieee
+]{biblatex}
+
+\addbibresource{loor.bib}
+
+\title{Fichas bibliográficas - FORM-FB-01\\
+Fundamentos de Sistemas Distribuidos y arquitecturas distribuidas}
+\author{Steffanny del Rocío Loor Suárez}
+\date{07 de noviembre del 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ficha 1: Consistencia causal}
+
+\subsection*{Referencia bibliográfica}
+\fullcite{freitas2025}
+
+\subsection*{Resumen}
+En este artículo los autores abordan el problema de mantener la consistencia causal de los datos entre servidores distribuidos geográficamente, evitando anomalías en las lecturas sin afectar demasiado el rendimiento. Para ello, Freitas et al. realizaron una revisión de la literatura científica, donde examinaron y compararon sistemas que implementan consistencia causal y admiten transacciones de solo lectura. Como resultado, identificaron cuatro estrategias recurrentes: comprobación de dependencias, secuenciadores, protocolos de estabilización y enfoques optimistas. Además, analizaron sus ventajas y limitaciones, destacando que cada estrategia implica compromisos relacionados con la escalabilidad, latencia, coordinación y rendimiento de los sistemas distribuidos.
+
+\subsection*{Dato concreto}
+Los autores identifican cuatro estrategias recurrentes
+para implementar consistencia causal: comprobación de
+dependencias, secuenciadores, protocolos de estabilización
+y enfoques optimistas.
+
+\textbf{Ubicación:} Página 10, sección 3.5
+(Summary), tabla 1: Recurrent Strategies to
+Implement Causally Consistent Systems.
+
+\subsection*{Nota personal}
+Este artículo me ayudó a comprender que es difícil mantener un equilibrio entre consistencia, disponibilidad y rendimiento en los sistemas distribuidos. Me pareció interesante la consistencia causal de la que se habla en el artículo, así como también las cuatro estrategias identificadas por Freitas et al.: comprobación de dependencias, secuenciadores, protocolos de estabilización y enfoques optimistas, ya que cada una presenta ventajas y limitaciones. En el informe TA-IND-01 utilizaría esta información para analizar cómo un sistema distribuido mantiene la consistencia de sus datos y qué compromisos existen entre las diferentes alternativas, relacionándolos con los conceptos de CAP y PACELC.
+
+\end{document}
