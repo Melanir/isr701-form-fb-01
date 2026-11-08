@@ -54,6 +54,23 @@ Los autores identifican cuatro estrategias recurrentes para implementar consiste
 
 Este artículo me ayudó a comprender que es difícil mantener un equilibrio entre consistencia, disponibilidad y rendimiento en los sistemas distribuidos. Me pareció interesante la consistencia causal de la que se habla en el artículo, así como también las cuatro estrategias identificadas por Freitas et al.~\cite{freitas2025}: comprobación de dependencias, secuenciadores, protocolos de estabilización y enfoques optimistas, ya que cada una presenta ventajas y limitaciones. En el informe TA-IND-01 utilizaría esta información para analizar cómo un sistema distribuido mantiene la consistencia de sus datos y qué compromisos existen entre las diferentes alternativas, relacionándolos con los conceptos de CAP y PACELC.
 
+
+\section*{Ficha 2: Tolerancia a fallos y recuperación de nodos}
+
+\subsection*{Resumen}
+
+Los fallos permanentes de nodos en clústeres de procesamiento pueden ocasionar problemas como interrumpir la ejecución de tareas distribuidas. Para enfrentar esta situación, Reitz y Fohry~\cite{reitz2024} proponen un mecanismo de puntos de control a nivel de tarea que permite recuperar el trabajo afectado sin reiniciar toda la aplicación. Esta propuesta fue implementada y evaluada mediante cuatro programas de prueba en dos clústeres y los resultados demostraron que sí es posible continuar con la ejecución utilizando los recursos disponibles, aunque mantener esta protección genera una sobrecarga adicional en el tiempo de procesamiento.
+
+\subsection*{Dato concreto}
+
+En los experimentos realizados con 1536 trabajadores en el clúster Lichtenberg, Reitz y Fohry registraron una sobrecarga máxima de protección del 43,98\,\%, mientras que se obtuvo el 28,3\,\% con 1280 trabajadores en el clúster Goethe. Estos resultados muestran que los programas necesitaron más tiempo para ejecutarse al utilizar el mecanismo de protección mediante puntos de control, en comparación con las ejecuciones sin protección~\cite{reitz2024}.
+
+\textbf{Ubicación:} Página 8 del PDF, apartado \textit{Experiments}, subsección \textit{Failure-Free Runs}, párrafo que comienza con ``The results from Fig. 5 are summarized in Fig. 6''~\cite{reitz2024}.
+
+\subsection*{Nota personal}
+
+Aprendí un poco más sobre los mecanismos que permiten recuperar las tareas afectadas sin tener que reiniciar toda la aplicación cuando falla un nodo en un sistema distribuido. Utilizar los puntos de control puede aumentar el tiempo de procesamiento, pero ayuda a mantener la continuidad de las tareas ante determinados fallos~\cite{reitz2024}. En el informe TA-IND-01 podría utilizar esta información para analizar cómo un sistema distribuido puede recuperarse de los fallos y qué consecuencias tienen estos mecanismos en su rendimiento.
+
 \printbibliography[title={Referencias bibliográficas}]
 
 \end{document}
