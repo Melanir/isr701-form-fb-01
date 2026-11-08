@@ -1,10 +1,17 @@
 
 \documentclass[12pt,a4paper]{article}
 
-\usepackage[spanish]{babel}
+\usepackage[main=spanish,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{csquotes}
+
+\DeclareQuoteStyle{ieeequotes}
+  {\textquotedblleft}{\textquotedblright}
+  {\textquoteleft}{\textquoteright}
+
+\setquotestyle{ieeequotes}
+
 \usepackage{geometry}
 \geometry{margin=2.5cm}
 
@@ -25,20 +32,22 @@
   linkcolor=blue
 ]{hyperref}
 
-\DefineBibliographyStrings{spanish}{
-  artno = {art. núm.}
-}
+
 
 \title{Fichas bibliográficas - FORM-FB-01\\
 Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas}
 \author{Steffanny del Rocío Loor Suárez}
-\date{07 de noviembre de 2026}
+\date{08 de noviembre de 2026}
 
 \begin{document}
 
 \maketitle
 
 \section*{Ficha 1: Consistencia causal}
+
+\noindent\textbf{Artículo:} \textit{A Survey on the State of the Art of Causally Consistent Cloud Systems}.
+
+\noindent\textbf{Referencia:} Freitas et al.~\cite{freitas2025}
 
 \subsection*{Resumen}
 
@@ -56,6 +65,10 @@ Este artículo me ayudó a comprender que es difícil mantener un equilibrio ent
 
 \section*{Ficha 2: Tolerancia a fallos y recuperación de nodos}
 
+\noindent\textbf{Artículo:} \textit{Task-Level Checkpointing and Localized Recovery to Tolerate Permanent Node Failures for Nested Fork--Join Programs in Clusters}.
+
+\noindent\textbf{Referencia:} Reitz y Fohry~\cite{reitz2024}
+
 \subsection*{Resumen}
 
 Los fallos permanentes de nodos en clústeres de procesamiento pueden ocasionar problemas como interrumpir la ejecución de tareas distribuidas. Para enfrentar esta situación, Reitz y Fohry~\cite{reitz2024} proponen un mecanismo de puntos de control a nivel de tarea que permite recuperar el trabajo afectado sin reiniciar toda la aplicación. Esta propuesta fue implementada y evaluada mediante cuatro programas de prueba en dos clústeres y los resultados demostraron que sí es posible continuar con la ejecución utilizando los recursos disponibles, aunque mantener esta protección genera una sobrecarga adicional en el tiempo de procesamiento.
@@ -72,13 +85,17 @@ Aprendí un poco más sobre los mecanismos que permiten recuperar las tareas afe
 
 \section*{Ficha 3: Evolución de las API en microservicios}
 
+\noindent\textbf{Artículo:} \textit{Microservice API Evolution in Practice: A Study on Strategies and Challenges}.
+
+\noindent\textbf{Referencia:} Lercher et al.~\cite{lercher2024}
+
 \subsection*{Resumen}
 
 Cuando se modifican las API de los microservicios pueden surgir problemas, ya que estos cambios pueden afectar la compatibilidad y la comunicación entre los servicios. Para investigar esta situación, Lercher et al.~\cite{lercher2024} realizaron entrevistas semiestructuradas a 17 profesionales de 11 empresas, con el propósito de conocer sus experiencias y las estrategias que utilizan. A partir de los resultados, identificaron diferentes estrategias y desafíos relacionados con la evolución de las API. Entre ellos destacan la necesidad de mantener la compatibilidad con versiones anteriores, coordinar los cambios entre equipos y mejorar la comunicación para evitar problemas de integración entre los diferentes servicios involucrados.
 
 \subsection*{Dato concreto}
 
-En la investigación de Lercher et al., los 17 participantes señalaron que, en determinadas situaciones, es necesario realizar cambios en las API que pueden romper la compatibilidad con versiones anteriores. Esto indica que, aunque mantener la compatibilidad es importante, algunos cambios son necesarios para incorporar nuevas funcionalidades o mejorar los servicios~\cite{lercher2024}.
+En la investigación de Lercher et al.~\cite{lercher2024}, los 17 participantes señalaron que, en determinadas situaciones, es necesario realizar cambios en las API que pueden romper la compatibilidad con versiones anteriores. Esto indica que, aunque mantener la compatibilidad es importante, algunos cambios son necesarios para incorporar nuevas funcionalidades o mejorar los servicios.
 
 \textbf{Ubicación:} Página 6 del PDF, apartado \textit{4. API evolution strategies (RQ2)}, subsección \textit{4.2. Accept necessary breaking changes}, primer párrafo~\cite{lercher2024}.
 
@@ -86,8 +103,11 @@ En la investigación de Lercher et al., los 17 participantes señalaron que, en 
 
 Con este artículo comprendí que modificar una API no solo afecta al servicio donde se realiza el cambio, sino que también puede ocasionar problemas en otros servicios importantes que dependen de ella. También aprendí que mantener la compatibilidad es importante, aunque en algunas situaciones sea necesario introducir cambios que la rompan~\cite{lercher2024}. Para el informe TA-IND-01, esta información me ayudará para analizar de mejor manera cómo se comunican los componentes de un sistema distribuido y qué dificultades pueden surgir cuando se modifican sus interfaces.
 
-
 \section*{Ficha 4: Planificación y distribución de microservicios}
+
+\noindent\textbf{Artículo:} \textit{Optimizing Cloud Performance: A Microservice Scheduling Strategy for Enhanced Fault-Tolerance, Reduced Network Traffic, and Lower Latency}.
+
+\noindent\textbf{Referencia:} Alelyani et al.~\cite{alelyani2024}
 
 \subsection*{Resumen}
 
@@ -95,7 +115,7 @@ El principal problema que aborda Alelyani et al.~\cite{alelyani2024} es que la c
 
 \subsection*{Dato concreto}
 
-Alelyani et al., en su primer escenario de simulación, consiguieron reducir el tráfico de red en un 36 \% con respecto a la estrategia utilizada por Alibaba. Para lograrlo, distribuyeron 11\,004 réplicas cerca de los microservicios con los que necesitaban comunicarse~\cite{alelyani2024}.
+Alelyani et al.~\cite{alelyani2024}, en su primer escenario de simulación, consiguieron reducir el tráfico de red en un 36 \% con respecto a la estrategia utilizada por Alibaba. Para lograrlo, distribuyeron 11\,004 réplicas cerca de los microservicios con los que necesitaban comunicarse.
 
 \textbf{Ubicación:} Página 14 del PDF, página impresa 35148, sección \textit{VIII. Results and Discussion}, subsección \textit{A. Reducing Network Traffic Cost}, primer párrafo~\cite{alelyani2024}.
 
@@ -103,6 +123,29 @@ Alelyani et al., en su primer escenario de simulación, consiguieron reducir el 
 
 En este artículo aprendí que, para distribuir microservicios, es importante analizar dónde se colocan sus réplicas y cómo se comunican entre los servidores~\cite{alelyani2024}. En el informe TA-IND-01, utilizaría este aprendizaje para analizar cómo un sistema distribuido organiza sus componentes y distribuye la carga, con el propósito de evitar retrasos y aprovechar mejor sus recursos.
 
+\section*{Ficha 5: Elección de líderes y consenso distribuido (Raft)}
+
+\noindent\textbf{Artículo:} \textit{Multi-strategy-based leader election mechanism for the Raft algorithm}.
+
+\noindent\textbf{Referencia:} Du et al.~\cite{du2023}
+
+\subsection*{Resumen}
+
+Este artículo estudia un problema del algoritmo de consenso Raft: cuando el servidor líder pierde rendimiento y sigue ocupando ese puesto, puede perjudicar el funcionamiento del sistema. Du et al.~\cite{du2023} proponen dos mecanismos para solucionarlo. El primero permite iniciar una nueva elección cuando el líder presenta problemas de rendimiento, mientras que el segundo asigna prioridades a los servidores según sus condiciones para seleccionar uno más adecuado. Mediante experimentos, los autores comprobaron que su propuesta mejora el rendimiento del sistema y reduce aproximadamente un 10 \% el tiempo promedio de elección en un escenario con 15 servidores.
+
+\subsection*{Dato concreto}
+
+En las pruebas realizadas con 15 servidores, los investigadores observaron que el algoritmo Raft original presentó 19 casos de división de votos durante las elecciones. Con el mecanismo de elección por prioridades que propusieron, consiguieron evitar esas divisiones y reducir aproximadamente un 10 \% el tiempo promedio de elección de un líder~\cite{du2023}.
+
+\noindent\textbf{Ubicación:} Página 13 del PDF, sección 5.3, \textit{Election elapsed time}, segundo párrafo, últimas líneas; continuación en la página 14, primer párrafo. Figura 11. La reducción del 10 \% se menciona explícitamente en la página 2, último párrafo antes de la sección 2~\cite{du2023}.
+
+\subsection*{Nota personal}
+
+En un sistema distribuido, no basta con que el servidor líder esté funcionando, sino que también es importante considerar su rendimiento. Me pareció interesante que se puedan establecer prioridades para elegir un líder más adecuado y evitar retrasos durante las elecciones~\cite{du2023}. Con este conocimiento, en la TA-IND-01 podré analizar de mejor manera cómo se coordinan los servidores de un sistema distribuido, cómo se seleccionan los responsables de ciertas operaciones y qué mecanismos se utilizan para mantener su funcionamiento cuando aparecen problemas.
+
+\begingroup
+\selectlanguage{english}
 \printbibliography[title={Referencias bibliográficas}]
+\endgroup
 
 \end{document}
