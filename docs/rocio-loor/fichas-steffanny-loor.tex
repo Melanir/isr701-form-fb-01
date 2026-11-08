@@ -54,7 +54,6 @@ Los autores identifican cuatro estrategias recurrentes para implementar consiste
 
 Este artículo me ayudó a comprender que es difícil mantener un equilibrio entre consistencia, disponibilidad y rendimiento en los sistemas distribuidos. Me pareció interesante la consistencia causal de la que se habla en el artículo, así como también las cuatro estrategias identificadas por Freitas et al.~\cite{freitas2025}: comprobación de dependencias, secuenciadores, protocolos de estabilización y enfoques optimistas, ya que cada una presenta ventajas y limitaciones. En el informe TA-IND-01 utilizaría esta información para analizar cómo un sistema distribuido mantiene la consistencia de sus datos y qué compromisos existen entre las diferentes alternativas, relacionándolos con los conceptos de CAP y PACELC.
 
-
 \section*{Ficha 2: Tolerancia a fallos y recuperación de nodos}
 
 \subsection*{Resumen}
@@ -70,6 +69,22 @@ En los experimentos realizados con 1536 trabajadores en el clúster Lichtenberg,
 \subsection*{Nota personal}
 
 Aprendí un poco más sobre los mecanismos que permiten recuperar las tareas afectadas sin tener que reiniciar toda la aplicación cuando falla un nodo en un sistema distribuido. Utilizar los puntos de control puede aumentar el tiempo de procesamiento, pero ayuda a mantener la continuidad de las tareas ante determinados fallos~\cite{reitz2024}. En el informe TA-IND-01 podría utilizar esta información para analizar cómo un sistema distribuido puede recuperarse de los fallos y qué consecuencias tienen estos mecanismos en su rendimiento.
+
+\section*{Ficha 3: Evolución de las API en microservicios}
+
+\subsection*{Resumen}
+
+Cuando se modifican las API de los microservicios pueden surgir problemas, ya que estos cambios pueden afectar la compatibilidad y la comunicación entre los servicios. Para investigar esta situación, Lercher et al.~\cite{lercher2024} realizaron entrevistas semiestructuradas a 17 profesionales de 11 empresas, con el propósito de conocer sus experiencias y las estrategias que utilizan. A partir de los resultados, identificaron diferentes estrategias y desafíos relacionados con la evolución de las API. Entre ellos destacan la necesidad de mantener la compatibilidad con versiones anteriores, coordinar los cambios entre equipos y mejorar la comunicación para evitar problemas de integración entre los diferentes servicios involucrados.
+
+\subsection*{Dato concreto}
+
+En la investigación de Lercher et al., los 17 participantes señalaron que, en determinadas situaciones, es necesario realizar cambios en las API que pueden romper la compatibilidad con versiones anteriores. Esto indica que, aunque mantener la compatibilidad es importante, algunos cambios son necesarios para incorporar nuevas funcionalidades o mejorar los servicios~\cite{lercher2024}.
+
+\textbf{Ubicación:} Página 6 del PDF, apartado \textit{4. API evolution strategies (RQ2)}, subsección \textit{4.2. Accept necessary breaking changes}, primer párrafo~\cite{lercher2024}.
+
+\subsection*{Nota personal}
+
+Con este artículo comprendí que modificar una API no solo afecta al servicio donde se realiza el cambio, sino que también puede ocasionar problemas en otros servicios importantes que dependen de ella. También aprendí que mantener la compatibilidad es importante, aunque en algunas situaciones sea necesario introducir cambios que la rompan~\cite{lercher2024}. Para el informe TA-IND-01, esta información me ayudará para analizar de mejor manera cómo se comunican los componentes de un sistema distribuido y qué dificultades pueden surgir cuando se modifican sus interfaces.
 
 \printbibliography[title={Referencias bibliográficas}]
 
