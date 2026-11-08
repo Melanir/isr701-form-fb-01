@@ -86,6 +86,23 @@ En la investigación de Lercher et al., los 17 participantes señalaron que, en 
 
 Con este artículo comprendí que modificar una API no solo afecta al servicio donde se realiza el cambio, sino que también puede ocasionar problemas en otros servicios importantes que dependen de ella. También aprendí que mantener la compatibilidad es importante, aunque en algunas situaciones sea necesario introducir cambios que la rompan~\cite{lercher2024}. Para el informe TA-IND-01, esta información me ayudará para analizar de mejor manera cómo se comunican los componentes de un sistema distribuido y qué dificultades pueden surgir cuando se modifican sus interfaces.
 
+
+\section*{Ficha 4: Planificación y distribución de microservicios}
+
+\subsection*{Resumen}
+
+El principal problema que aborda Alelyani et al.~\cite{alelyani2024} es que la comunicación entre microservicios distribuidos puede generar demasiado tráfico, retrasos y un uso ineficiente de los recursos. Para solucionarlo, los investigadores propusieron una estrategia de planificación que combina un algoritmo de optimización por enjambre de partículas (PSO) modificado y Round Robin. El primero selecciona servidores apropiados para colocar réplicas de microservicios, mientras que el segundo las distribuye equilibradamente. La estrategia integra Kubernetes para gestionar su despliegue. Mediante simulaciones con datos de Alibaba y Google, comprobaron mejoras en el tráfico de red, el balanceo de carga y el aprovechamiento de recursos.
+
+\subsection*{Dato concreto}
+
+Alelyani et al., en su primer escenario de simulación, consiguieron reducir el tráfico de red en un 36 \% con respecto a la estrategia utilizada por Alibaba. Para lograrlo, distribuyeron 11\,004 réplicas cerca de los microservicios con los que necesitaban comunicarse~\cite{alelyani2024}.
+
+\textbf{Ubicación:} Página 14 del PDF, página impresa 35148, sección \textit{VIII. Results and Discussion}, subsección \textit{A. Reducing Network Traffic Cost}, primer párrafo~\cite{alelyani2024}.
+
+\subsection*{Nota personal}
+
+En este artículo aprendí que, para distribuir microservicios, es importante analizar dónde se colocan sus réplicas y cómo se comunican entre los servidores~\cite{alelyani2024}. En el informe TA-IND-01, utilizaría este aprendizaje para analizar cómo un sistema distribuido organiza sus componentes y distribuye la carga, con el propósito de evitar retrasos y aprovechar mejor sus recursos.
+
 \printbibliography[title={Referencias bibliográficas}]
 
 \end{document}
