@@ -9,7 +9,7 @@ Cada integrante publica sus propias fichas en una carpeta de `docs/`. Los archiv
 | Integrante | Carpeta | PDF |
 |---|---|---|
 | Melanie Michelle Muñoz Vera | [`docs/melanie-munoz/`](docs/melanie-munoz/) | [Fichas de Melanie](docs/melanie-munoz/fichas.pdf) |
-| Steffanny del Rocío Loor Suárez | [`docs/rocio-loor/`](docs/rocio-loor/) | Pendiente |
+| Steffanny del Rocío Loor Suárez | [`docs/rocio-loor/`](docs/rocio-loor/) | [Fichas de Rocío](docs/rocio-loor/fichas-steffanny-loor.pdf) |
 | Dayver Yahir Rivas Piloso | [`docs/dayver-rivas/`](docs/dayver-rivas/) | Pendiente |
 
 Para subir tu trabajo desde GitHub, abre tu carpeta y elige **Add file → Upload files**. Sube tus archivos desde tu propia cuenta para que tu aporte aparezca con tu usuario en el historial.
@@ -44,3 +44,7 @@ Los DOI se abrieron y se cotejaron con Crossref y la publicación. Los artículo
 - [IEEE Access, índices de la revista](https://ieeeaccess.ieee.org/about/bibliometrics/)
 - [Designing Distributed Systems, segunda edición digital](https://www.oreilly.com/library/view/designing-distributed-systems/9781098156343/)
 - [Designing Data-Intensive Applications, segunda edición digital](https://www.oreilly.com/library/view/designing-data-intensive/9781098119058/)
+
+## Uso de inteligencia artificial en las fichas de Melanie
+
+Se utilizó Codex de OpenAI para localizar fuentes, preparar ejemplos de apoyo. También se utilizó Gemini para las traducciones.
